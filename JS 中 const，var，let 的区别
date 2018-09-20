@@ -1,0 +1,21 @@
+JS 中 const，var，let 的区别
+
+js 中三种定义变量的方式：const，var，let 的区别。
+
+1、const 定义的变量不可以修改，而且必须初始化。
+
+const b = 2; // 正确
+const b; // 错误，必须初始化
+
+2、var 定义的变量可以修改，如果不初始化输出 undefined，不会报错。
+
+3、let 是块级作用于，函数内部使用 let 定以后，对函数外部无影响。
+
+let c = 3;
+console.log('函数外let定义c：' + c); // 输出c=3
+function change(){
+   let c = 6;
+   console.log('函数内let定义c：' + c); // 输出c=6
+} 
+change();
+console.log('函数调用后let定义c不受函数内部定义影响：' + c); // 输出c=3
